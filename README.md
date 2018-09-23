@@ -3,7 +3,8 @@
 ## Configuracoes iniciais
 
 - Requisitos: Docker e Docker Compose
-- Baixar configuracao do ambiente: 
+- Baixar configuracao do ambiente: https://github.com/vitorapaiva/docker.git
+- Criar a pasta mysql, para garantir persistencia dos dados salvos no MySQL
 - Ajustar paths no docker-compose.yml
 - Adicionar api.teste.local ao seu arquivo hosts, com o ip do Docker
 
