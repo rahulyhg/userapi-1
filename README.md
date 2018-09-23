@@ -20,9 +20,11 @@
 
 ## Rotas disponiveis
 
- GET      | api/user     | Retornas informacoes de um usuario. Parametro obrigatorio: user_id
- POST     | api/user     | Cria um novo usuario. Parametro obrigatorio: name,email,password
- PUT      | api/user     | Atualiza informacoes de um usuario. Parametro obrigatorio: user_id
- DELETE   | api/user     | Remove um usuario do sistema. Parametro obrigatorio: user_id
+- GET      | api/user     | Retornas informacoes de um usuario. Parametro obrigatorio: user_id
+- POST     | api/user     | Cria um novo usuario. Parametro obrigatorio: name,email,password
+- PUT      | api/user     | Atualiza informacoes de um usuario. Parametro obrigatorio: user_id
+- DELETE   | api/user     | Remove um usuario do sistema. Parametro obrigatorio: user_id
 
- 
+## Testes
+
+- Para executar os testes, basta executar o seguinte comando no terminal, dentro da pasta raiz do projeto: vendor/bin/phpunit
