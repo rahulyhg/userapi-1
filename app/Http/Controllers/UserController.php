@@ -16,6 +16,11 @@ class UserController extends Controller
 
     public function create(Request $request){
         try {
+            $validatedData = $request->validate([
+                'name' => 'required',
+                'email' => 'required|unique:users|email',
+                'password' => 'required'
+            ]);
             $user_data=$request->all();
             return response(['id'=>$this->user->create($user_data)],200);
         }
@@ -26,6 +31,9 @@ class UserController extends Controller
 
     public function update(Request $request){
         try {
+            $validatedData = $request->validate([
+                'user_id' => 'required'
+            ]);
             $user_data=$request->all();
             return response(['result'=>$this->user->update($user_data)],200);
         }
@@ -36,6 +44,9 @@ class UserController extends Controller
 
     public function delete(Request $request){
         try {
+            $validatedData = $request->validate([
+                'user_id' => 'required'
+            ]);
             return response(['result'=>$this->user->delete($request->user_id)],200);
         }
         catch(\Exception $e){
@@ -46,6 +57,9 @@ class UserController extends Controller
 
     public function getUserById(Request $request){
         try {
+            $validatedData = $request->validate([
+                'user_id' => 'required'
+            ]);
             return response(['result'=>$this->user->getUserById($request->user_id)],200);
         }
         catch(\Exception $e){

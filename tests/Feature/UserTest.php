@@ -45,4 +45,30 @@ class UserTest extends TestCase
                 'result' => 1,
             ]);
     }
+
+    public function testUserCreateValidation()
+    {
+        $response = $this->json('POST', 'api/user', ['email'=>'email10@email.com']);
+        $response->assertStatus(400);
+    } 
+
+    public function testUserUpdateValidation()
+    {
+        $response = $this->json('PUT', 'api/user', ['name' => 'Teste 2','email'=>'loxas1@email.com','password'=>'password3']);
+        $response->assertStatus(400);
+    }
+
+    public function testUserGetValidation()
+    {
+        $response = $this->json('GET', 'api/user');
+        $structure['result']=['id','name','email','email_verified_at','created_at','updated_at'];
+        $response->assertStatus(400);
+    }
+
+    public function testUserDeleteValidation()
+    {
+        $response = $this->json('DELETE', 'api/user');
+        $structure=['id'];
+        $response->assertStatus(400);
+    }
 }
