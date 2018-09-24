@@ -12,7 +12,6 @@
 
 ## Configuracoes Iniciais
 
-- Requisitos: composer
 - Na pasta raiz do projeto, executar o comando composer install
 - Se nao existir, criar arquivo .env
 - Se nao existir, gerar app key com o comando php artisan key:generate e inseri-la no .env na variavel APP_KEY
